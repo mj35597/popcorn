@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>웰컴 투 동막골</title>
+		<link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo:800&display=swap&subset=korean" rel="stylesheet">
+
+	<style type="text/css">
+
+		body{background:pink;}
+		html{font-family: 'Nanum Myeongjo', sans-serif;}
+		.thum{height: 200px; opacity: 0.7}
+		.thum:hover{opacity: 0.7}
+
+		#egg{position: absolute; left: 25%; top: 15%;
+			width: 700; height: auto;}
+
+		.tit{color: white;position: absolute; font-size:30px; font-family: 'Nanum Myeongjo', sans-serif; color:#888; top: 20px; left: 680px;}
+		.cli{color: white;position: absolute; font-size: 15px; font-family: 'Nanum Myeongjo', sans-serif; color: red; bottom: 50px; left: 730px;}
+
+		.cir{width:20px; height:20px;
+			background:white;border-radius: 50%;position: absolute;}
+
+		.s1 .wrap{height: 800px;}
+
+	
+
+	</style>
+</head>
+
+	<p class="tit">웰컴 투 동막골!</p>
+	<p class="cli"></p>
+
+	<img src="oh.jpg" class="thum" id="egg">
+	<audio src="song.mp3" loop id="es"></audio>
+
+	<script type="text/javascript">
+
+	 	var eggstate = "off";
+		egg.onclick = function(){
+			if(eggstate == "off"){
+				es.play();
+				egg.style.opacity="1";
+				eggstate = "on";
+				egg.style.width = "800px";
+			}else{
+				es.pause();
+				egg.style.opacity="0.7";
+				foodstate = "off";	
+				egg.style.width = "800px"	
+			}
+		}
+
+	</script>
+
+	<div id="circle" class="cir"></div>
+	<script>
+	for(var i=0; i<20; i++){
+		var a = circle.cloneNode(true);
+		a.id = i;
+		a.style.left = Math.random()*1500 + "px";
+		a.style.top = Math.random()*700 + "px";
+		var dd = Math.random()*80 + "px";
+		a.style.width = dd;
+		a.style.height = dd;
+		a.style.background = rgbmake();	
+		document.body.appendChild(a);
+	}
+	function rgbmake(){
+		var a = randomBH(244, 240, 158);
+		var b = randomBH(252, 255, 255);
+		var c = randomBH(32, 227, 115);
+		var d ="rgb("+a+","+b+","+c+")";
+		return d;
+	}
+	
+	setInterval(aa,400);
+	
+	function aa(){
+		location.reload();
+	}
+	
+
+
+function randomBH(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+		
+
+	</script>
+	</body>
+</html>
+
